@@ -15,3 +15,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
   .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
+// routes
+app.get('/', (req, res) => res.render('home'));
+app.get('/smoothies', (req, res) => res.render('smoothies'));
