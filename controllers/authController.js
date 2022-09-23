@@ -17,8 +17,8 @@ module.exports.signup_post = async (req, res) => {
     res.status(201).json(user);
   }
   catch(err) {
-    console.log(err);
-    res.status(400).send('error, user not created');
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
   }
  
 }
